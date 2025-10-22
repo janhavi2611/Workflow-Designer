@@ -1,0 +1,433 @@
+* ---------- Global Layout ---------- */
+h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+p {
+  color: #6c4a33;
+  font-size: 0.95rem;
+}
+
+
+body {
+  background: linear-gradient(160deg, #f7ede2, #f3d7b0);
+  font-family: 'Poppins', sans-serif;
+  color: #4a2c1a;
+  margin: 0;
+  padding: 0;
+
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* Floating decorative circles */
+.floating-shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(164,117,81,0.15);
+  z-index: 0;
+  pointer-events: none;
+  animation: float 6s infinite alternate;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-20px) translateX(10px); }
+}
+
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(164, 117, 81, 0.2);
+  border-radius: 50%;
+  top: 50px;
+  left: -50px;
+  z-index: 0;
+}
+body::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(201, 162, 125, 0.2);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+
+
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: #4a2c1a !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar span {
+  color: #f7ede2 !important;
+}
+
+
+/* ---------- Cards ---------- */
+.card {
+  background: linear-gradient(160deg, #fff5eb, #f3d7b0); /* gradient instead of white */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* deeper shadow */
+  border-radius: 20px; /* rounded corners */
+  transition: transform 0.3s ease; /* for hover lift */
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+
+/* ---------- Buttons ---------- */
+button, .btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-brown {
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: white;
+  border: none;
+}
+.btn-brown:hover {
+  background: linear-gradient(90deg, #c9a27d, #a47551);
+  color: #fff;
+}
+.welcome-icon {
+  animation: pulse 2s infinite;
+}
+
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+
+/* ---------- Todo Cards ---------- */
+.todo-card {
+  background: #fffaf5;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+.todo-card.completed {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+.todo-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a2c1a;
+}
+.todo-desc {
+  font-size: 0.95rem;
+  color: #6c4a33;
+  margin-bottom: 8px;
+}
+.todo-date {
+  font-size: 0.85rem;
+  color: #8a5c3c;
+}
+
+
+/* ---------- Todo Actions ---------- */
+.todo-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.todo-actions button {
+  background: none;
+  border: none;
+  color: #4a2c1a;
+  font-size: 1.2rem;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.todo-actions button:hover {
+  transform: scale(1.15);
+}
+
+
+/* ---------- Badges ---------- */
+.badge-status {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.badge-pending {
+  background-color: #f3d7b0;
+  color: #4a2c1a;
+}
+.badge-completed {
+  background-color: #a47551;
+  color: #fff;
+}
+
+
+/* ---------- Progress Bar ---------- */
+.progress-container {
+  margin-top: 25px;
+  background: #f2e0cb;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+
+/* ---------- Floating Add Button ---------- */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: #fff;
+  font-size: 1.6rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  z-index: 999;
+
+
+  /* Add bounce animation */
+  animation: bounce 2s infinite;
+}
+
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.floating-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #c9a27d, #a47551);
+  color: #fff;
+}
+/* Add New Todo Panel */
+.card.p-4 {
+  border-radius: 20px;
+  background: #fffaf5;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card.p-4:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+
+.btn.btn-block {
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.btn.btn-block:hover {
+  background: linear-gradient(90deg, #c9a27d, #a47551);
+  transform: scale(1.05);
+}
+
+
+/* Filter/Search Panel */
+#filter-form input[type="text"],
+#filter-form select {
+  border-radius: 12px;
+  border: 1px solid #d9bfa6;
+  padding: 7px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+#filter-form input[type="text"]:focus,
+#filter-form select:focus {
+  outline: none;
+  border-color: #a47551;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+/* -------- Filter / Search Pills -------- */
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.filter-panel input[type="text"] {
+  flex: 1 1 200px;
+  border-radius: 50px;
+  border: none;
+  padding: 8px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+
+.filter-panel input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+
+/* Selects as gradient pills */
+.filter-panel select {
+  appearance: none; /* remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(90deg, #f3d7b0, #a47551);
+  color: #4a2c1a;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+
+/* Hover & Focus for selects */
+.filter-panel select:hover,
+.filter-panel select:focus {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  outline: none;
+}
+
+
+/* Dropdown arrow inside select */
+.filter-panel select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%227%22%20viewBox%3D%220%200%2010%207%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%207%205-7H0z%22%20fill%3D%224a2c1a%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 7px;
+}
+/* -------- Selected / Active Filter Pills -------- */
+.filter-panel select option {
+  color: #4a2c1a;
+  background-color: #fffaf5; /* normal dropdown background */
+}
+
+
+/* Apply gradient to selected value in select */
+.filter-panel select:focus,
+.filter-panel select:active,
+.filter-panel select option:checked {
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* Optional: make the select itself show gradient when a value is chosen */
+.filter-panel select:valid {
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: #fff;
+  font-weight: 500;
+}
+
+
+/* For multiple filters showing nicely together */
+.filter-panel select:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+/* ---------- Add New Todo Panel ---------- */
+.card-add-todo {
+  background: linear-gradient(160deg, #feefdb, #3c2f1c);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-add-todo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Input fields inside Add Todo */
+.card-add-todo .form-control {
+  border-radius: 50px;
+  border: 1px solid #d9bfa6;
+  padding: 10px 18px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+.card-add-todo textarea {
+  border-radius: 8px;
+  border: 1px solid #c9a27d;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  background: #fffaf5;
+}
+
+
+.card-add-todo .form-control:focus {
+  outline: none;
+  border-color: #a47551;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Add Button Gradient */
+.btn-add-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #a47551, #c9a27d);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+
+.btn-add-todo:hover {
+  background: linear-gradient(90deg, #c9a27d, #a47551);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  color: #fff;
+}
