@@ -13,10 +13,10 @@ This project was developed as part of our **Python Mini Project**.
 
 | Name | Role |
 |------|------|
-| **Janhavi Jadhav** | Backend Developer |
-| **Shravanee Kumbhar** | Frontend Developer |
-| **Diksha More** | UI/UX Designer |
-| **Sejal Wable** | Database & Testing |
+| **Janhavi Jadhav** | 
+| **Shravanee Kumbhar** | 
+| **Diksha More** | 
+| **Sejal Wable** | 
 
 ---
 
@@ -52,7 +52,7 @@ With an intuitive interface and a clean design, the app aims to boost productivi
 | Technology | Purpose |
 |-------------|----------|
 | **Python (Django)** | Backend framework |
-| **HTML5, CSS3, Bootstrap** | Frontend design |
+| **HTML, CSS, Bootstrap** | Frontend design |
 | **SQLite** | Database |
 | **VS Code** | Code editor |
 | **Git & GitHub** | Version control |
