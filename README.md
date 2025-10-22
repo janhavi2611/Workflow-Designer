@@ -11,8 +11,8 @@ This project was developed as part of our **Python Mini Project**.
 
 ## 👩‍💻 Team Members
 
-| Name | Role |
-|------|------|
+| Name |
+|------|
 | **Janhavi Jadhav** | 
 | **Shravanee Kumbhar** | 
 | **Diksha More** | 
